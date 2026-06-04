@@ -1,0 +1,6 @@
+{
+  "name": "Sala de Sinais - Opções Binárias",
+  "description": "Landing page de alta conversão para sala de sinais de opções binárias, com visual moderno, transparência de resultados e design premium.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
