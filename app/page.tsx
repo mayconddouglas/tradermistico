@@ -40,27 +40,31 @@ export default function Home() {
     setShowCookieBanner(false);
   };
 
-  // High-credibility, compliance-friendly client testimonials text
+  // High-credibility, compliance-friendly client testimonials with screenshots
   const testimonials = [
     {
       initials: "L.M.",
       date: "Há 2 dias",
-      text: "O que mais gostei foi a didática sobre controle de risco. Finalmente entendi como traçar simetrias sólidas."
+      text: "Mais uma vitória hoje. Só seguindo as confluências e o price action puro do canal.",
+      img: "/trade_result_one.png"
     },
     {
       initials: "R.S.",
       date: "Há 1 semana",
-      text: "Ambiente fantástico para aprender de verdade. O canal é focado puramente em price action, sem promessas absurdas."
+      text: "Simulações e marcações de suporte perfeitas hoje no OTC. R$51 limpos no bolso.",
+      img: "/trade_result_two.png"
     },
     {
-      initials: " Thiago K.",
+      initials: "Thiago K.",
       date: "Há 4 dias",
-      text: "Estudos diários exemplares. Ideal para quem quer aprender sobre disciplina gráfica e parar de operar por impulso."
+      text: "O acompanhamento de taxas e histórico é impecável, excelente para quem estuda o fluxo.",
+      img: "/trade_result_three.png"
     },
     {
       initials: "M.A.",
       date: "Há 12h",
-      text: "Excelente acompanhamento estatístico. O melhor canal gratuito para estudar zonas de suporte e resistência em m5."
+      text: "Entrada espetacular na retração de M5! O suporte e resistência funcionaram perfeitamente.",
+      img: "/trade_result_four.png"
     }
   ];
 
@@ -233,20 +237,28 @@ export default function Home() {
 
             <motion.div 
               className="flex gap-4 w-max"
-              animate={{ x: [0, -800] }}
+              animate={{ x: [0, -1216] }}
               transition={{
                 repeat: Infinity,
                 duration: 25,
                 ease: "linear",
               }}
             >
-              {/* Render testimonials twice to allow seamless illusion loop */}
-              {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+              {/* Render testimonials multiple times for a seamless loop */}
+              {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((item, index) => (
                 <div 
                   key={index} 
-                  className="w-64 shrink-0 p-4 rounded bg-zinc-950 border border-zinc-900 flex flex-col justify-between space-y-3"
+                  className="w-72 shrink-0 p-4 rounded-lg bg-zinc-950 border border-zinc-900 flex flex-col justify-between space-y-3"
                 >
-                  <p className="text-zinc-400 text-[11px] leading-relaxed font-sans h-12 overflow-hidden text-ellipsis">
+                  <div className="w-full h-40 overflow-hidden rounded border border-zinc-900 bg-zinc-900/60 relative">
+                    <img 
+                      src={item.img} 
+                      alt={`Minha operação por ${item.initials}`}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover grayscale contrast-[1.15] hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                    />
+                  </div>
+                  <p className="text-zinc-400 text-[11px] leading-relaxed font-sans min-h-[44px] flex items-center">
                     &ldquo;{item.text}&rdquo;
                   </p>
                   <div className="flex items-center justify-between border-t border-zinc-900/80 pt-2">
